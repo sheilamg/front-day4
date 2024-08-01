@@ -3,7 +3,6 @@ import './App.css'
 import { Layout } from './components/Layout/Layout'
 import { Register } from './pages/Register/Register'
 import { PageNotFound } from './pages/PageNotFound/PageNotFound'
-import { Users } from './pages/Users/Users'
 import { Profile } from './pages/Profile/Profile'
 import { SearchMovie } from './components/SearchMovie/SearchMovie'
 import MovieProfile from './components/SearchMovie/MovieProfile/MovieProfile'
@@ -13,6 +12,7 @@ import { Home } from './pages/Home/Home'
 import { Login } from './pages/Login/Login'
 import { AuthProvider } from './utils/AuthProvider'
 import PrivateRoutes from './utils/PrivateRoutes'
+import UserProfile from './pages/UserProfile/UserProfile'
 
 
 function App() {
@@ -26,12 +26,14 @@ function App() {
     <Routes>
      <Route path="/" element={<Layout />}>
        <Route path="/home" element={<Home />} />
-       <Route path="users" element={<Users />} />
+       
 
        <Route element={<PrivateRoutes />}>
        {" "}
        <Route path="profile" element={<Profile />} />
+       <Route path="user-profile" element={<UserProfile />} />
        </Route>
+
        <Route path="register" element={<Register />} />
        <Route path="login" element={<Login />} />
       

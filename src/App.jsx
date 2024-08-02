@@ -32,11 +32,14 @@ function App() {
        <Route element={<PrivateRoutes />}>
        {" "}
        <Route path="profile" element={<Profile />} />
-       <Route path="user-profile" element={<UserProfile />} />
-       <Route path="/create-user-review/:id" element={<UserCreateReview />} />
-       <Route path="/create-comment-on-review/:id/:movieId" element={<UserCreateCommentOnReview />} />
+        <Route path="user-profile" element={<UserProfile />} />
+        <Route path="/create-user-review/:id" element={<UserCreateReview />} />
+        <Route path="/create-comment-on-review/:id/:movieId" element={<UserCreateCommentOnReview />} />
+       </Route>
 
-       
+       <Route element={<PrivateRoutes requiredRole="admin"/>}>
+        <Route path="/admin-profile" element={<AdminProfile />} />
+        <Route path="/edit-user/:id" element={<EditUser />} />
        </Route>
 
        <Route path="register" element={<Register />} />
@@ -46,8 +49,7 @@ function App() {
        <Route path="/movie/:id" element={<MovieProfile />} />
        
        
-       <Route path="/admin-profile" element={<AdminProfile />} />
-       <Route path="/edit-user/:id" element={<EditUser />} />
+       
        <Route path="*" element={<PageNotFound />} /> 
      </Route>
    </Routes>

@@ -25,7 +25,13 @@ export const Login = () => {
         localStorage.setItem("AuthToken", JSON.stringify(data))
 
         login(data.token)
-        navigate("/search-movie")
+        if(data.role === 'admin'){
+          navigate("/admin-profile")
+        } else{
+          navigate("/search-movie")
+        }
+       
+        
       }
     } catch (error) {
       console.error('Login Failed', error)

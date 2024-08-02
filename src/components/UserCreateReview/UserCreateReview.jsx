@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./userCreateReview.css";
 import StarRating from "../StarRating/StarRating";
 import { useFetch } from "../../hooks/useFetch";

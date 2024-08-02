@@ -13,6 +13,7 @@ import PrivateRoutes from './utils/PrivateRoutes'
 import UserProfile from './pages/UserProfile/UserProfile'
 import Home from './pages/Home/Home'
 import UserCreateReview from './components/UserCreateReview/UserCreateReview'
+import { UserCreateCommentOnReview } from './components/UserCreateCommentOnReview/UserCreateCommentOnReview'
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
        <Route path="profile" element={<Profile />} />
        <Route path="user-profile" element={<UserProfile />} />
        <Route path="/create-user-review/:id" element={<UserCreateReview />} />
+       <Route path="/create-comment-on-review/:id/:movieId" element={<UserCreateCommentOnReview />} />
 
        
        </Route>

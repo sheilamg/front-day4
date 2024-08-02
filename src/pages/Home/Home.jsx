@@ -1,33 +1,20 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../utils/AuthProvider';
-
-export const Home = () => {
-  const navigate = useNavigate();
-  const { logout } = useAuth();
-
-  const handleSignOut = () => {
-
-    console.log("User signed out");
-
-    //localStorage.removeItem("accessToken");
-    //localStorage.removeItem("refreshToken");
-    localStorage.removeItem("AuthToken");
-
-    console.log("Tokens have been removed");
-    logout();
-    navigate("/login");
-
-  };
+import { Link } from 'react-router-dom';
+import StaticMovies from '../../components/StaticMovies/StaticMovies';
+import Movies from '../../components/Movies/Movies';
 
 
+const Home = () => {
   return (
     <>
-    <div>This is the home page</div>
-    <button onClick={handleSignOut}>
-            Sign Out
-    </button>
+      <h1 style={{ textAlign: "center" }}>Welcome to Adviters Movies!</h1>
+      <Link to={`/search-movie`}>
+        <button>Search Movies</button>
+      </Link>
+      <Movies />
+      <StaticMovies />
     </>
-    
-  )
-}
+  );
+};
+
+export default Home;

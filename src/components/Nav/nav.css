@@ -1,0 +1,24 @@
+nav {
+    /* border: 1px black solid; */
+    background: skyblue;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  .a-nav {
+    font-family: cursive;
+    text-decoration: none;
+    align-items: center;
+    color: brown;
+  }
+  
+  a {
+    cursor: pointer;
+  }
+  
+  .label-review {
+    margin-top: 5px;
+  }
+  

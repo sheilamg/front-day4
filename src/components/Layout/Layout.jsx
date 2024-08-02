@@ -1,13 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Outlet } from 'react-router-dom'
-import Header from '../../pages/Header/Header'
-import { Footer } from '../../pages/Footer/Footer'
+import Nav from '../Nav/Nav'
+import Footer from '../Footer/Footer'
+
 
 export const Layout = () => {
 
   return (
     <>
-    <Header />
+    <Nav />
     <Outlet />
     <Footer />
     </>

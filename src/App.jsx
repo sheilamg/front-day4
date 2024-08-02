@@ -1,5 +1,4 @@
-import { NavLink, Route, Router, Routes } from 'react-router-dom'
-import './App.css'
+import { Route, Routes } from 'react-router-dom'
 import { Layout } from './components/Layout/Layout'
 import { Register } from './pages/Register/Register'
 import { PageNotFound } from './pages/PageNotFound/PageNotFound'
@@ -8,11 +7,12 @@ import { SearchMovie } from './components/SearchMovie/SearchMovie'
 import MovieProfile from './components/SearchMovie/MovieProfile/MovieProfile'
 import { AdminProfile } from './pages/AdminProfile/AdminProfile'
 import { EditUser } from './pages/AdminProfile/EditUser/EditUser'
-import { Home } from './pages/Home/Home'
 import { Login } from './pages/Login/Login'
 import { AuthProvider } from './utils/AuthProvider'
 import PrivateRoutes from './utils/PrivateRoutes'
 import UserProfile from './pages/UserProfile/UserProfile'
+import Home from './pages/Home/Home'
+import UserCreateReview from './components/UserCreateReview/UserCreateReview'
 
 
 function App() {
@@ -25,21 +25,25 @@ function App() {
       {" "}
     <Routes>
      <Route path="/" element={<Layout />}>
-       <Route path="/home" element={<Home />} />
+       <Route path="/" element={<Home />} />
        
-
+        {/*private*/}
        <Route element={<PrivateRoutes />}>
        {" "}
        <Route path="profile" element={<Profile />} />
        <Route path="user-profile" element={<UserProfile />} />
+       <Route path="/create-user-review/:id" element={<UserCreateReview />} />
+
+       
        </Route>
 
        <Route path="register" element={<Register />} />
        <Route path="login" element={<Login />} />
       
-       <Route path="search-movie" element={<SearchMovie />} />
-              
+       <Route path="search-movie" element={<SearchMovie />} />       
        <Route path="/movie/:id" element={<MovieProfile />} />
+       
+       
        <Route path="/admin-profile" element={<AdminProfile />} />
        <Route path="/edit-user/:id" element={<EditUser />} />
        <Route path="*" element={<PageNotFound />} /> 

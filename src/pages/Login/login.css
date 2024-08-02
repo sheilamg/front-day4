@@ -1,0 +1,22 @@
+#login-form {
+    font-family: cursive;
+    /* border: 1px black solid; */
+    border-radius: 5%;
+    margin: auto;
+    margin-top: 35px;
+    margin-bottom: 40px;
+    text-align: center;
+    width: 200px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(skyblue, orangered);
+    box-shadow: 20px 20px 20px black;
+  }
+  
+  .login-input {
+    margin: auto;
+    text-align: center;
+    border: 0;
+    outline: none;
+  }

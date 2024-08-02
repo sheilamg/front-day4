@@ -1,0 +1,15 @@
+footer {
+    margin: auto;
+    margin-top: 15px;
+    font-family: cursive;
+    background-color: blue;
+    color: whitesmoke;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    bottom: 0;
+  }
+  

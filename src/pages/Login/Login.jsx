@@ -1,6 +1,7 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import { useAuth } from '../../utils/AuthProvider'
 import { useNavigate } from 'react-router-dom'
+import "./login.css"
 
 export const Login = () => {
   const [email, setEmail] = useState('')
@@ -21,11 +22,6 @@ export const Login = () => {
 
       if(data.token){
         
-        //const {access, refresh} = data.token
-
-        //localStorage.setItem("accessToken", JSON.stringify(access))
-        //localStorage.setItem("refreshToken", JSON.stringify(refresh))
-        //localStorage.setItem("AuthToken", JSON.stringify(JSON.stringify(data)))
         localStorage.setItem("AuthToken", JSON.stringify(data))
 
         login(data.token)
@@ -38,10 +34,22 @@ export const Login = () => {
   
   return (
     <>
-    <form onSubmit={handleSubmit}>
-      <input type="email" value={email} onChange={(event) => setEmail(event.target.value)} placeholder="Email" required />
-      <input type="password" value={password} onChange={(event) => setPassword(event.target.value)} placeholder="Password" required />
+    <form id="login-form" onSubmit={handleSubmit}>
+      <h3>Login</h3>
+      <label htmlFor="text">Email</label>
+      <input type="email" className="login-input" value={email} onChange={(event) => setEmail(event.target.value)} placeholder="Enter your Email" required />
+      <label htmlFor="">Password</label>
+      <input type="password" className="login-input" value={password} onChange={(event) => setPassword(event.target.value)} placeholder="Enter your Password" required />
+      
+      <div className="div-form" required>
+      <input type="checkbox" required />
+          I'm not a bot
+
       <button type="submit" onClick={handleSubmit}>Sign In</button>
+      or
+      </div>
+      Are you new at x?{" "}
+      <a onClick={() => navigate("/register")}>Create a New Account</a>
     </form>
     </>
   )

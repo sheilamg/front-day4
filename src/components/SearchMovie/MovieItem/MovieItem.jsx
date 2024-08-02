@@ -9,7 +9,8 @@ const MovieItem = ({ movie }) => {
   return (
     <div>
       <Link to={`/movie/${movie.id}`}>
-      <h2>{movie.title}</h2>
+      {console.log(movie.title)}
+      <h3>{movie.title}</h3>
       </Link>
       <p>{movie.description}</p>
       <p>Release Date: {movie.release_date}</p>

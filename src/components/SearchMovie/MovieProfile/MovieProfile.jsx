@@ -20,8 +20,8 @@ const MovieProfile = () => {
   return (
     <div>
       <h1>Movie Profile</h1>
-      <p>Movie ID: {id}</p>
 
+      <h3>{movie.title}</h3>
       <p>{movie.description}</p>
       <p>Release Date: {movie.release_date}</p>
       <p>Genres: {genreNames.length > 0 ? genreNames.join(', ') : 'No genres available'}</p>
@@ -40,12 +40,12 @@ const MovieProfile = () => {
         <button>View Comments</button>
         </Link>*/}
         
-        <div>Comments of this Review:{(item.comments_user) ? (
+        <div>Comments of this Review:{(item.comments_user == []) ? ((
            item.comments_user).map((value, index) =>
              <div key={index}>
                <div>Comment from User: {value.user.username}</div>
                {value.comment}
-             </div> ) : 
+             </div> )) : 
              <div>There are no comments for the moment...
               <button>Would you like to add a new comment?</button>
              </div>
@@ -59,7 +59,7 @@ const MovieProfile = () => {
       
       {/*valid only when the user is logged, otherwise, redirect to login */}
       
-      <Link to={(items === null) ? '/login' : '/user-edit-review'}>
+      <Link to={(items === null) ? '/login' : `/create-user-review/${id}`}>
        <button>Add a Review!</button> 
       </Link>
       

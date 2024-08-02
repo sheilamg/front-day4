@@ -35,7 +35,7 @@ const Nav = () => {
           
           { (items !== null) && (
             <>
-           <a onClick={() => navigate("/user-Profile")} className="a-nav">
+           <a onClick={() => navigate("/user-profile")} className="a-nav">
            User
            </a> 
           <button onClick={handleSignOut}>

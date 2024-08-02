@@ -4,12 +4,17 @@ import "./userCreateReview.css";
 import StarRating from "../StarRating/StarRating";
 
 const UserCreateReview = () => {
+  const [items, setItems] = useState(JSON.parse(localStorage.getItem('AuthToken')))  
+  const userCaptured = items.user.id  
+
   const [rating, setRating] = useState(0);
   const [reviewText, setReviewText] = useState("");
   const [valuetitle, setTitle] = useState("")
 
   //id de la movie
   const { id } = useParams();
+  const parceId = parseInt(id)
+   
 
   const handleRatingChange = (newRating) => {
     setRating(newRating)
@@ -24,7 +29,7 @@ const UserCreateReview = () => {
       description: reviewText,
       rate: rating,
       user: userCaptured,
-      movie: id
+      movie: parceId
     };
 
     try {
@@ -59,7 +64,7 @@ const UserCreateReview = () => {
       
       <form className="textarea-div" onSubmit={handleSubmit}>
         <label htmlFor="text">Title</label>
-        <input type="text" value={title} onChange={(event) => setTitle(event.target.value)} placeholder="introduce your review.." required />
+        <input type="text" value={valuetitle} onChange={(event) => setTitle(event.target.value)} placeholder="introduce your review.." required />
         <textarea
           cols={50}
           rows={10}
